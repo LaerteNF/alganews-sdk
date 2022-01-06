@@ -13,7 +13,7 @@ class Service {
     onFulfilled: (
       request: AxiosRequestConfig
     ) => AxiosRequestConfig | Promise<AxiosRequestConfig>,
-    onRejected: (error: any) => any
+    onRejected?: (error: any) => any
   ) {
     Http.interceptors.request.use(onFulfilled, onRejected);
   }
